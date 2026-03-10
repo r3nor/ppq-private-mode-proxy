@@ -18,12 +18,6 @@ Run this command to install the PPQ Private Mode plugin:
 openclaw plugins install https://github.com/PayPerQ/ppq-private-mode-proxy
 ```
 
-Then fix a missing peer dependency that the plugin requires:
-
-```bash
-npm install zod@^4 --prefix ~/.openclaw/extensions/ppq-private-mode
-```
-
 ### Step 3: Add the plugin config to OpenClaw
 
 Add the following to the user's `~/.openclaw/openclaw.json` file. If the file already has content, merge these fields into the existing config — do not overwrite existing settings.
@@ -72,7 +66,6 @@ If the user reports issues:
 - **"Protocol error" or "Authentication error"**: Their API key may be wrong or their balance is low. Check at https://ppq.ai
 - **"Attestation failed"**: The secure enclave may be temporarily unavailable. Wait a few minutes and restart: `systemctl --user restart openclaw-gateway.service`
 - **Port conflict**: Add `"port": 8788` to the plugin config in openclaw.json
-- **"Cannot find module 'zod/v4'"**: Re-run `npm install zod@^4 --prefix ~/.openclaw/extensions/ppq-private-mode` and restart the gateway
 
 ## About
 
